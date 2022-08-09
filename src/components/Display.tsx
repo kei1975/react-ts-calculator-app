@@ -4,7 +4,7 @@ export default function Display(props: {
   value: string
 }) {
   return (
-    <div>
+    <div className="display">
      {props.value}
     </div>
   )
