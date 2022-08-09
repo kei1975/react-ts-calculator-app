@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { calculate, State } from '../logic/calculate'
 import ButtonPanel from './ButtonPanel'
 import Display from './Display'
+import "../styles/Calculator.scss"
 
 export default function Calculator() {
     const [state, setState] = useState<State>({
