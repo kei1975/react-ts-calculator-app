@@ -6,7 +6,7 @@ import Display from './Display'
 export default function Calculator() {
     const [state, setState] = useState<State>({
         current: "0",
-        operand: 0,
+        operand: 0, //計算に使う数値を覚えておく
         operator: null,
         isNextClear: false
     })
@@ -17,7 +17,7 @@ export default function Calculator() {
     }
   return (
     <div>
-        <Display/>
+        <Display value={state.current}/>
         <ButtonPanel buttonHandler={buttonHandler} />
     </div>
   )
