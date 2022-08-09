@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { calculate, State } from '../logic/calculate'
+import { ButtonCode, calculate, State } from '../logic/calculate'
 import ButtonPanel from './ButtonPanel'
 import Display from './Display'
 import "../styles/Calculator.scss"
@@ -11,7 +11,7 @@ export default function Calculator() {
         operator: null,
         isNextClear: false
     })
-    const buttonHandler = (code: string) => {
+    const buttonHandler = (code: ButtonCode) => {
         // console.log(code)
         const nextState = calculate(code, state)
         setState(nextState)

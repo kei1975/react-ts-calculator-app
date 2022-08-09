@@ -1,7 +1,8 @@
 import React from 'react'
+import { ButtonCode } from '../logic/calculate';
 
 export default function ButtonPanel(props: {
-  buttonHandler: (code:string) => void;
+  buttonHandler: (code:ButtonCode) => void;
 }) {
   return (
     <div className="buttonPanel">

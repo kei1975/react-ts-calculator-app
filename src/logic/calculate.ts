@@ -1,24 +1,30 @@
-export function calculate(button: string, state: State): State {
-    if(isNumberButton(button)){
-        return handleNumberButton(button, state)
-    }
-    if(isOperatorButton(button)){
-        return handleOperatorButton(button, state)
-    }
-    if(isDotButton(button)){
-        return handleDotButton(state)
-    }
-    if (isDeleteButton(button)) {
-        return handleDeleteButton(state)
-    }
-    if (isAllClearButton(button)) {
-        return handleAllClearButton()
-    }
-    if (isEqualButton(button)) {
-        return handleIsEqualButton(state)
-    }
+export type Operator = "+" | "-"
+export type NumberCode = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
 
-    return state
+export type ButtonCode = NumberCode | Operator | "." | "D" | "AC" | "="
+
+
+export function calculate(button: ButtonCode, state: State): State {
+  if (isNumberButton(button)) {
+    return handleNumberButton(button, state);
+  }
+  if (isOperatorButton(button)) {
+    return handleOperatorButton(button, state);
+  }
+  if (isDotButton(button)) {
+    return handleDotButton(state);
+  }
+  if (isDeleteButton(button)) {
+    return handleDeleteButton(state);
+  }
+  if (isAllClearButton(button)) {
+    return handleAllClearButton();
+  }
+  if (isEqualButton(button)) {
+    return handleIsEqualButton(state);
+  }
+
+  return state;
 }
 
 export interface State {
